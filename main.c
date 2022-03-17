@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <string.h>
+#include <dirent.h>
 
 #define MAX_LIMIT 20
 
 
-void echo (char * str){
-    memcpy(str,str+5,MAX_LIMIT-4);
-    printf(str);
-}
+void dir(char str[MAX_LIMIT]);
+void echo (char * str);
+
 
 
 int main (){
@@ -21,6 +21,10 @@ int main (){
         if (strncmp (str,"ECHO", 4) == 0){
             echo(str);
         }
+        else if (strncmp(str,"DIR",3)== 0){
+            dir(str);
+
+        }
         
 
 
@@ -28,6 +32,29 @@ int main (){
 
     printf("\nbye bye \n");
 
+}
+
+void dir(char str[MAX_LIMIT]) {
+    DIR *dir ;
+    struct dirent *pdir;
+    dir = opendir(".");
+    if ( dir == NULL) {
+        printf("Error with reading ");
+        return;
+    }
+    while ((pdir = readdir(dir)) != NULL){
+        if (pdir->d_name[0] != '.')
+        {
+            printf("%s\t", pdir->d_name);
+        }
+    }
+    printf("\n");
+    closedir(dir);
+    }
+
+void echo (char * str){
+    memcpy(str,str+5,MAX_LIMIT-4);
+    printf(str);
 }
 
 
