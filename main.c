@@ -7,7 +7,7 @@
 
 /*
 *A. do loop for yes master - DONE !!!!!!!!!!!!!!!!!
-*B.Read getCWD  - DONE !!!!!!!!!!!!!!!!!
+*B.Read getCWD  - DONE !!!!!!!!!!!!!!!!!!!
 *C. ECHO - DONE !!!!!!!!!!!!!!!!!!!
 *D.1 TCP PORT - ? 
 *D.2 server - ? 
