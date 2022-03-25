@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <dirent.h>
 #include <unistd.h>
@@ -34,16 +35,27 @@ int main()
         fgets(str, MAX_LIMIT, stdin);
         if (strncmp(str, "ECHO", 4) == 0)
         {
-            echo(str);
+            // echo(str);
+            str[0] = 'e';
+            str[1] = 'c';
+            str[2] = 'h';
+            str[3] = 'o';
+            system(str);
         }
         else if (strncmp(str, "DIR", 3) == 0)
         {
-            dir(str);
+            // dir(str);
+            str[0] = 'd';
+            str[1] = 'i';
+            str[2] = 'r';
+            system(str);
         }
         else if (strncmp(str, "CD", 2) == 0)
         {
-            cd(str);
-            
+            // cd(str);
+            str[0] = 'c';
+            str[1] = 'd';
+            system(str);
         }
     }
 
