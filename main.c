@@ -52,10 +52,10 @@ int main()
         }
         else if (strncmp(str, "CD", 2) == 0)
         {
-            // cd(str);
+            cd(str);
             str[0] = 'c';
             str[1] = 'd';
-            system(str);
+            //system(str);
         }
     }
 
@@ -92,16 +92,7 @@ void echo(char *str)
 void cd(char *str)
 {
     memcpy(str, str + 3, MAX_LIMIT - 3);
-    int counter = 0;
-    while (str[counter])
-    {
-        // printf("char : %c", str[counter]);
-        // printf("\n");
-        // printf("counter : %d", counter);
-        // printf("\n");
-        counter++;
-    }
-    // CD /home/dolev2004/Documents/dick
+    int counter = strlen(str);
     char str3[counter];
     memcpy(str3, str, counter - 1);
     // printf("str3:  %s", str3);

@@ -14,4 +14,4 @@ tidy:
 	clang-tidy $(SOURCES) -checks=bugprone-*,clang-analyzer-*,cppcoreguidelines-*,performance-*,portability-*,readability-* --warnings-as-errors=-* --
 
 clean: 
-	rm -f *.o main
+	rm -f *.o *.out main
