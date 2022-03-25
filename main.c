@@ -5,6 +5,25 @@
 #include <unistd.h>
 #include <limits.h>
 
+/*
+*A. do loop for yes master - DONE !!!!!!!!!!!!!!!!!
+*B.Read getCWD  - DONE !!!!!!!!!!!!!!!!!
+*C. ECHO - DONE !!!!!!!!!!!!!!!!!!!
+*D.1 TCP PORT - ? 
+*D.2 server - ? 
+*E. LOCAL - ? 
+*F. DIR - DONE !!!!!!!!!!!!!!!!!!!!
+*G. CD - DONE  -- add some comments 
+*H. add system methods -- add some comments . 
+*I. implemnt with frok(), exec(), wait ()- ? 
+*J. COPY SRC DEST - make a copy of file - ? 
+*K. DELETE function - delete file - ? 
+*/ 
+
+
+
+
+
 #define MAX_LIMIT PATH_MAX
 
 void dir(char str[MAX_LIMIT]);
