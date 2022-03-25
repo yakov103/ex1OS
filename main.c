@@ -8,6 +8,7 @@
 
 void dir(char str[MAX_LIMIT]);
 void echo(char *str);
+void cd(char *str);
 
 // https://www.tutorialspoint.com/c_standard_library/c_function_system.htm
 
@@ -41,30 +42,8 @@ int main()
         }
         else if (strncmp(str, "CD", 2) == 0)
         {
+            cd(str);
             
-            memcpy(str, str + 3, MAX_LIMIT - 3);
-            printf("%s", str);
-
-            // chdir זה פונקציית מערכת כי היא מבקשת מהמערכת ההפעלה לשנות את המקום של התהליך
-            // char str2[MAX_LIMIT];
-            // strncpy(str2, str + 2, MAX_LIMIT - 2);
-            // printf("%s\n", str2);
-            // int counter1 = 0;
-            // printf("%c", (str[3 + counter1]));
-            // printf("\n");
-            // while (str[3 + counter1] != '\0')
-            // {
-            //     counter1++;
-            // }
-            // counter1--;
-            // printf("%d" , counter1);
-            // printf("%c", (str[3 + counter1]));
-
-            // // chdir(str2);
-            // // /home/dolev2004/Documents/dick
-            chdir(str);
-            // printing current working directory
-            printf("%s\n", getcwd(str, 100));
         }
     }
 
@@ -96,4 +75,26 @@ void echo(char *str)
 {
     memcpy(str, str + 5, MAX_LIMIT - 4);
     printf("%s", str);
+}
+
+void cd(char *str)
+{
+    memcpy(str, str + 3, MAX_LIMIT - 3);
+    int counter = 0;
+    while (str[counter])
+    {
+        // printf("char : %c", str[counter]);
+        // printf("\n");
+        // printf("counter : %d", counter);
+        // printf("\n");
+        counter++;
+    }
+    // CD /home/dolev2004/Documents/dick
+    char str3[counter];
+    memcpy(str3, str, counter - 1);
+    // printf("str3:  %s", str3);
+    printf("%s", str);
+    chdir(str3);
+    // printing current working directory
+    printf("%s\n", getcwd(str, 100));
 }
