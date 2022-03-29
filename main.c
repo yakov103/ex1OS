@@ -4,25 +4,22 @@
 #include <dirent.h>
 #include <unistd.h>
 #include <limits.h>
+#include "client.h"
 
 /*
-*A. do loop for yes master - DONE !!!!!!!!!!!!!!!!!
-*B.Read getCWD  - DONE !!!!!!!!!!!!!!!!!!!
-*C. ECHO - DONE !!!!!!!!!!!!!!!!!!!
-*D.1 TCP PORT - ? 
-*D.2 server - ? 
-*E. LOCAL - ? 
-*F. DIR - DONE !!!!!!!!!!!!!!!!!!!!
-*G. CD - DONE  -- add some comments 
-*H. add system methods -- add some comments . 
-*I. implemnt with frok(), exec(), wait ()- ? 
-*J. COPY SRC DEST - make a copy of file - ? 
-*K. DELETE function - delete file - ? 
-*/ 
-
-
-
-
+ *A. do loop for yes master - DONE !!!!!!!!!!!!!!!!!
+ *B.Read getCWD  - DONE !!!!!!!!!!!!!!!!!!!
+ *C. ECHO - DONE !!!!!!!!!!!!!!!!!!!
+ *D.1 TCP PORT - ?
+ *D.2 server - ?
+ *E. LOCAL - ?
+ *F. DIR - DONE !!!!!!!!!!!!!!!!!!!!
+ *G. CD - DONE  -- not working with system
+ *H. add system methods -- add some comments .
+ *I. implemnt with frok(), exec(), wait ()- ?
+ *J. COPY SRC DEST - make a copy of file - ?
+ *K. DELETE function - delete file - ?
+ */
 
 #define MAX_LIMIT PATH_MAX
 
@@ -32,7 +29,7 @@ void cd(char *str);
 
 // https://www.tutorialspoint.com/c_standard_library/c_function_system.htm
 
-int main()
+int main(int argc, char const *argv[])
 {
     // https://stackoverflow.com/questions/298510/how-to-get-the-current-directory-in-a-c-program
     char cwd[PATH_MAX];
@@ -72,9 +69,21 @@ int main()
         else if (strncmp(str, "CD", 2) == 0)
         {
             cd(str);
-            str[0] = 'c';
-            str[1] = 'd';
-            //system(str);
+            // str[0] = 'c';
+            // str[1] = 'd';
+            // system(str);
+            // if (getcwd(cwd, sizeof(cwd)) != NULL)
+            // {
+            //     printf("Current working dir: %s\n", cwd);
+            // }
+            // else
+            // {
+            //     perror("getcwd() error");
+            // }
+        }
+        else if (strncmp(str, "TCP PORT", 8) == 0)
+        {
+            client();
         }
     }
 
