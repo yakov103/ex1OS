@@ -25,7 +25,7 @@ void func(int sockfd)
         n = 0;
         while ((buff[n++] = getchar()) != '\n')
             ;
-        if ((strncmp(buff, "exit", 4)) == 0 || (strncmp(buff, "EXIT", 4)) == 0)
+        if ((strncmp(buff, "exit", 4)) == 0 || (strncmp(buff, "EXIT", 4)) == 0 || (strncmp(buff, "LOCAL", 4)) == 0)
         {
             printf("Client Exit...\n");
             break;
@@ -34,7 +34,7 @@ void func(int sockfd)
         bzero(buff, sizeof(buff));
         read(sockfd, buff, sizeof(buff));
         printf("From Server : %s", buff);
-        if ((strncmp(buff, "exit", 4)) == 0 || (strncmp(buff, "EXIT", 4)) == 0)
+        if ((strncmp(buff, "exit", 4)) == 0 || (strncmp(buff, "EXIT", 4)) == 0 || (strncmp(buff, "LOCAL", 4)) == 0)
         {
             printf("Client Exit...\n");
             break;
