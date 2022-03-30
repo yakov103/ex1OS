@@ -6,6 +6,7 @@
 #include <limits.h>
 #include "client.h"
 #include <sys/wait.h> // for wait()
+#include <ctype.h>
 
 /*
  *A. do loop for yes master - DONE !!!!!!!!!!!!!!!!!
@@ -54,7 +55,7 @@ int main(int argc, char const *argv[])
         if (strncmp(str, "ECHO", 4) == 0)
         {
             // our function **********************
-            // echo(str);
+            echo(str);
             // sysem function ********************
             // str[0] = 'e';
             // str[1] = 'c';
@@ -87,7 +88,7 @@ int main(int argc, char const *argv[])
         else if (strncmp(str, "DIR", 3) == 0)
         {
             // our function **********************
-            // dir(str);
+            dir(str);
             // sysem function ********************
             // str[0] = 'd';
             // str[1] = 'i';
@@ -118,8 +119,9 @@ int main(int argc, char const *argv[])
         else if (strncmp(str, "CD", 2) == 0)
         {
             // our function ****************************
-            // cd(str);
+            cd(str);
             // sysem function **************************
+            // not working because it run the function on the child process
             // str[0] = 'c';
             // str[1] = 'd';
             // system(str);
@@ -132,6 +134,7 @@ int main(int argc, char const *argv[])
             //     perror("getcwd() error");
             // }
             // fork wait and execv *********************
+            // not working because it run the function on the child process
             // memcpy(str, str + 3, MAX_LIMIT - 3);
             // pid_t pid = fork();
             // if (pid == -1)
@@ -165,6 +168,47 @@ int main(int argc, char const *argv[])
         else if (strncmp(str, "TCP PORT", 8) == 0)
         {
             client();
+        }
+        else if (strncmp(str, "DELETE", 6) == 0)
+        {
+            memcpy(str, str + 7, MAX_LIMIT - 7);
+            char *word;
+            char *src_str;
+            src_str = strtok(str, " ");
+            printf("%s", src_str);
+            int res;
+            res = unlink(src_str);
+            if (res != 0){
+                printf("problem delete\n");
+            }
+            // remove(src_str);  also not working 
+        }
+        else if (strncmp(str, "COPY", 4) == 0)
+        {
+            memcpy(str, str + 5, MAX_LIMIT - 5);
+            char *word;
+            char *src_str;
+            char *dest_str;
+            src_str = strtok(str, " ");
+            dest_str = strtok(NULL, str); // dont know why it doesnt take the second word
+
+            // Variable Definition
+            char cTemp;
+            FILE *fpSourceFile = fopen(src_str, "rb");
+            FILE *fpTargetFile = fopen(dest_str, "wb");
+
+            // Code Section
+
+            // Read From The Source File - "Copy"
+            while (fread(&cTemp, 1, 1, fpSourceFile) == 1)
+            {
+                // Write To The Target File - "Paste"
+                fwrite(&cTemp, 1, 1, fpTargetFile);
+            }
+
+            // Close The Files
+            fclose(fpSourceFile);
+            fclose(fpTargetFile);
         }
     }
 
