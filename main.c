@@ -11,13 +11,13 @@
  *A. do loop for yes master - DONE !!!!!!!!!!!!!!!!!
  *B.Read getCWD  - DONE !!!!!!!!!!!!!!!!!!!
  *C. ECHO - DONE !!!!!!!!!!!!!!!!!!!
- *D.1 TCP PORT - ?
- *D.2 server - ?
- *E. LOCAL - ?
+ *D.1 TCP PORT - DONE
+ *D.2 server - DONE
+ *E. LOCAL - DONE
  *F. DIR - DONE !!!!!!!!!!!!!!!!!!!!
  *G. CD - DONE  -- not working with system
- *H. add system methods -- add some comments .
- *I. implemnt with fork(), exec(), wait ()- ?
+ *H. add system methods -- DONE
+ *I. implemnt with fork(), exec(), wait ()- DONE
  *J. COPY SRC DEST - make a copy of file - ?
  *K. DELETE function - delete file - ?
  */
@@ -94,6 +94,26 @@ int main(int argc, char const *argv[])
             // str[2] = 'r';
             // system(str);
             // fork wait and execv ***************
+            // pid_t pid = fork();
+            // if (pid == -1)
+            // {
+            //     // error, failed to fork()
+            //     perror("can't fork");
+            //     exit(1);
+            // }
+            // else if (pid > 0)
+            // {
+            //     int status;
+            //     waitpid(pid, &status, 0);
+            //     printf("status: %d", status);
+            // }
+            // else
+            // {
+            //     // we are the child
+            //     char *bin_path = "/bin/dir";
+            //     char *args[] = {bin_path, NULL};
+            //     execv(bin_path, args);
+            // }
         }
         else if (strncmp(str, "CD", 2) == 0)
         {
@@ -112,6 +132,35 @@ int main(int argc, char const *argv[])
             //     perror("getcwd() error");
             // }
             // fork wait and execv *********************
+            // memcpy(str, str + 3, MAX_LIMIT - 3);
+            // pid_t pid = fork();
+            // if (pid == -1)
+            // {
+            //     // error, failed to fork()
+            //     perror("can't fork");
+            //     exit(1);
+            // }
+            // else if (pid > 0)
+            // {
+            //     int status;
+            //     waitpid(pid, &status, 0);
+            //     printf("status: %d", status);
+            //     if (getcwd(cwd, sizeof(cwd)) != NULL)
+            //     {
+            //         printf("Current working dir: %s\n", cwd);
+            //     }
+            //     else
+            //     {
+            //         perror("getcwd() error");
+            //     }
+            // }
+            // else
+            // {
+            //     // we are the child
+            //     char *bin_path = "/bin/cd";
+            //     char *args[] = {bin_path, str};
+            //     execv(bin_path, args);
+            // }
         }
         else if (strncmp(str, "TCP PORT", 8) == 0)
         {
