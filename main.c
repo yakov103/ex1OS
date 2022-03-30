@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <limits.h>
 #include "client.h"
+#include <sys/wait.h> // for wait()
 
 /*
  *A. do loop for yes master - DONE !!!!!!!!!!!!!!!!!
@@ -26,12 +27,14 @@
 void dir(char str[MAX_LIMIT]);
 void echo(char *str);
 void cd(char *str);
+void fork_echo();
 
 // https://www.tutorialspoint.com/c_standard_library/c_function_system.htm
 
 int main(int argc, char const *argv[])
 {
     // https://stackoverflow.com/questions/298510/how-to-get-the-current-directory-in-a-c-program
+
     char cwd[PATH_MAX];
     if (getcwd(cwd, sizeof(cwd)) != NULL)
     {
@@ -43,7 +46,6 @@ int main(int argc, char const *argv[])
     }
 
     char str[MAX_LIMIT] = "on";
-    int flag = 1, rst;
     char exit[5] = "EXIT";
     while (strncmp(str, exit, 4) != 0)
     {
@@ -51,24 +53,32 @@ int main(int argc, char const *argv[])
         fgets(str, MAX_LIMIT, stdin);
         if (strncmp(str, "ECHO", 4) == 0)
         {
+            // our function **********************
             // echo(str);
-            str[0] = 'e';
-            str[1] = 'c';
-            str[2] = 'h';
-            str[3] = 'o';
-            system(str);
+            // sysem function ********************
+            // str[0] = 'e';
+            // str[1] = 'c';
+            // str[2] = 'h';
+            // str[3] = 'o';
+            // system(str);
+            // fork wait and execv ***************
         }
         else if (strncmp(str, "DIR", 3) == 0)
         {
+            // our function **********************
             // dir(str);
-            str[0] = 'd';
-            str[1] = 'i';
-            str[2] = 'r';
-            system(str);
+            // sysem function ********************
+            // str[0] = 'd';
+            // str[1] = 'i';
+            // str[2] = 'r';
+            // system(str);
+            // fork wait and execv ***************
         }
         else if (strncmp(str, "CD", 2) == 0)
         {
-            cd(str);
+            // our function ****************************
+            // cd(str);
+            // sysem function **************************
             // str[0] = 'c';
             // str[1] = 'd';
             // system(str);
@@ -80,6 +90,8 @@ int main(int argc, char const *argv[])
             // {
             //     perror("getcwd() error");
             // }
+            // fork wait and execv *********************
+            fork_echo();
         }
         else if (strncmp(str, "TCP PORT", 8) == 0)
         {
@@ -128,4 +140,29 @@ void cd(char *str)
     chdir(str3);
     // printing current working directory
     printf("%s\n", getcwd(str, 100));
+}
+
+void fork_echo(char *path_to_dir, int size)
+{
+    pid_t pid = fork();
+
+    if (pid == -1)
+    {
+        // error, failed to fork()
+        perror("can't fork");
+        exit(1);
+    }
+    else if (pid > 0)
+    {
+        int status;
+        waitpid(pid, &status, 0);
+        printf("status: %d", status);
+    }
+    else
+    {
+        // we are the child
+        char *bin_path = "/bin/dir";
+        char *args[] = {bin_path, NULL};
+        execv(bin_path, args);
+    }
 }
