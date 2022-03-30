@@ -17,7 +17,7 @@
  *F. DIR - DONE !!!!!!!!!!!!!!!!!!!!
  *G. CD - DONE  -- not working with system
  *H. add system methods -- add some comments .
- *I. implemnt with frok(), exec(), wait ()- ?
+ *I. implemnt with fork(), exec(), wait ()- ?
  *J. COPY SRC DEST - make a copy of file - ?
  *K. DELETE function - delete file - ?
  */
@@ -46,8 +46,8 @@ int main(int argc, char const *argv[])
     }
 
     char str[MAX_LIMIT] = "on";
-    char exit[5] = "EXIT";
-    while (strncmp(str, exit, 4) != 0)
+    char exit_program[5] = "EXIT";
+    while (strncmp(str, exit_program, 4) != 0)
     {
         printf("yes master : ");
         fgets(str, MAX_LIMIT, stdin);
@@ -62,6 +62,27 @@ int main(int argc, char const *argv[])
             // str[3] = 'o';
             // system(str);
             // fork wait and execv ***************
+            // memcpy(str, str + 5, MAX_LIMIT - 4);
+            // pid_t pid = fork();
+            // if (pid == -1)
+            // {
+            //     // error, failed to fork()
+            //     perror("can't fork");
+            //     exit(1);
+            // }
+            // else if (pid > 0)
+            // {
+            //     int status;
+            //     waitpid(pid, &status, 0);
+            //     printf("status: %d", status);
+            // }
+            // else
+            // {
+            //     // we are the child
+            //     char *bin_path = "/bin/echo";
+            //     char *args[] = {bin_path, str};
+            //     execv(bin_path, args);
+            // }
         }
         else if (strncmp(str, "DIR", 3) == 0)
         {
@@ -91,7 +112,6 @@ int main(int argc, char const *argv[])
             //     perror("getcwd() error");
             // }
             // fork wait and execv *********************
-            fork_echo();
         }
         else if (strncmp(str, "TCP PORT", 8) == 0)
         {
@@ -142,8 +162,12 @@ void cd(char *str)
     printf("%s\n", getcwd(str, 100));
 }
 
-void fork_echo(char *path_to_dir, int size)
+void fork_echo(char *str)
 {
+    // str = ECHO dolev is gay
+
+    memcpy(str, str + 5, MAX_LIMIT - 4);
+
     pid_t pid = fork();
 
     if (pid == -1)
@@ -162,7 +186,8 @@ void fork_echo(char *path_to_dir, int size)
     {
         // we are the child
         char *bin_path = "/bin/dir";
-        char *args[] = {bin_path, NULL};
+        printf("dolev\n");
+        char *args[] = {bin_path, str};
         execv(bin_path, args);
     }
 }
