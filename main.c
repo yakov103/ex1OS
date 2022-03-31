@@ -76,7 +76,7 @@ int main(int argc, char const *argv[])
             // str[3] = 'o';
             // system(str);
             // fork wait and execv ***************
-            // memcpy(str, str + 5, MAX_LIMIT - 5);
+            // memcpy(str, str + 5, MAX_LIMIT - 4);
             // pid_t pid = fork();
             // if (pid == -1)
             // {
