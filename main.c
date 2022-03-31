@@ -19,9 +19,17 @@
  *G. CD - DONE  -- not working with system
  *H. add system methods -- DONE
  *I. implemnt with fork(), exec(), wait ()- DONE
- *J. COPY SRC DEST - make a copy of file - ?
- *K. DELETE function - delete file - ?
+ *J. COPY SRC DEST - make a copy of file DONE 
+ *K. DELETE function - delete file - DONE
  */
+
+/*
+searhce:
+
+https://stackoverflow.com/questions/2114377/copying-a-part-of-a-string-substring-in-c
+
+
+*/
 
 #define MAX_LIMIT PATH_MAX
 
@@ -172,16 +180,21 @@ int main(int argc, char const *argv[])
         else if (strncmp(str, "DELETE", 6) == 0)
         {
             memcpy(str, str + 7, MAX_LIMIT - 7);
-            char *word;
             char *src_str;
-            //src_str = strtok(str, " ");
-            printf("%s", src_str);
+            src_str = strtok(str, " ");
+            // printf("srd :%s , len : %d \n", src_str, strlen(src_str));
+            int small_len = strlen(src_str) - 1;
+            char otherString[small_len];
+            strncpy(otherString, src_str, strlen(src_str) - 1);
+            otherString[small_len] = '\0'; // place the null terminator
+            // printf("other :%s , len : %d \n", otherString, strlen(otherString));
             int res;
-            res = unlink(str);
-            if (res != 0){
+            res = unlink(src_str);
+            if (res != 0)
+            {
                 printf("problem delete\n");
             }
-            // remove(src_str);  also not working 
+            // remove(src_str);  also not working
         }
         else if (strncmp(str, "COPY", 4) == 0)
         {
@@ -190,7 +203,7 @@ int main(int argc, char const *argv[])
             char *src_str;
             char *dest_str;
             src_str = strtok(str, " ");
-            dest_str = strtok(NULL, " "); // dont know why it doesnt take the second word
+            dest_str = strtok(NULL, " "); 
 
             // Variable Definition
             char cTemp;
