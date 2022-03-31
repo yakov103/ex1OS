@@ -76,7 +76,7 @@ int main(int argc, char const *argv[])
             // str[3] = 'o';
             // system(str);
             // fork wait and execv ***************
-            // memcpy(str, str + 5, MAX_LIMIT - 4);
+            // memcpy(str, str + 5, MAX_LIMIT - 5);
             // pid_t pid = fork();
             // if (pid == -1)
             // {
@@ -224,41 +224,12 @@ void cd(char *str)
 {
     memcpy(str, str + 3, MAX_LIMIT - 3);
     int counter = strlen(str);
-    char str3[counter];
-    memcpy(str3, str, counter - 1);
-    // printf("str3:  %s", str3);
+    char dest[counter];
+    memcpy(dest, str, counter - 1);
+    // printf("dest:  %s", dest);
     printf("%s", str);
-    chdir(str3);
+    chdir(dest);
     // printing current working directory
-    printf("%s\n", getcwd(str, 100));
+    printf("current directory:  %s\n", getcwd(str, 100));
 }
 
-void fork_echo(char *str)
-{
-    // str = ECHO dolev is gay
-
-    memcpy(str, str + 5, MAX_LIMIT - 4);
-
-    pid_t pid = fork();
-
-    if (pid == -1)
-    {
-        // error, failed to fork()
-        perror("can't fork");
-        exit(1);
-    }
-    else if (pid > 0)
-    {
-        int status;
-        waitpid(pid, &status, 0);
-        printf("status: %d", status);
-    }
-    else
-    {
-        // we are the child
-        char *bin_path = "/bin/dir";
-        printf("dolev\n");
-        char *args[] = {bin_path, str};
-        execv(bin_path, args);
-    }
-}
