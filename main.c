@@ -135,48 +135,8 @@ int main(int argc, char const *argv[])
             cd(str);
             // sysem function **************************
             // not working because it run the function on the child process
-            // str[0] = 'c';
-            // str[1] = 'd';
-            // system(str);
-            // if (getcwd(cwd, sizeof(cwd)) != NULL)
-            // {
-            //     printf("Current working dir: %s\n", cwd);
-            // }
-            // else
-            // {
-            //     perror("getcwd() error");
-            // }
             // fork wait and execv *********************
             // not working because it run the function on the child process
-            // memcpy(str, str + 3, MAX_LIMIT - 3);
-            // pid_t pid = fork();
-            // if (pid == -1)
-            // {
-            //     // error, failed to fork()
-            //     perror("can't fork");
-            //     exit(1);
-            // }
-            // else if (pid > 0)
-            // {
-            //     int status;
-            //     waitpid(pid, &status, 0);
-            //     printf("status: %d", status);
-            //     if (getcwd(cwd, sizeof(cwd)) != NULL)
-            //     {
-            //         printf("Current working dir: %s\n", cwd);
-            //     }
-            //     else
-            //     {
-            //         perror("getcwd() error");
-            //     }
-            // }
-            // else
-            // {
-            //     // we are the child
-            //     char *bin_path = "/bin/cd";
-            //     char *args[] = {bin_path, str};
-            //     execv(bin_path, args);
-            // }
         }
         else if (strncmp(str, "TCP PORT", 8) == 0)
         {
