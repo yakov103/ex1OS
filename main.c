@@ -19,7 +19,7 @@
  *G. CD - DONE  -- not working with system
  *H. add system methods -- DONE
  *I. implemnt with fork(), exec(), wait ()- DONE
- *J. COPY SRC DEST - make a copy of file DONE 
+ *J. COPY SRC DEST - make a copy of file DONE
  *K. DELETE function - delete file - DONE
  */
 
@@ -27,6 +27,11 @@
 searhce:
 
 https://stackoverflow.com/questions/2114377/copying-a-part-of-a-string-substring-in-c
+https://www.geeksforgeeks.org/tcp-server-client-implementation-in-c/
+https://www.geeksforgeeks.org/udp-server-client-implementation-c/
+https://stackoverflow.com/questions/14150431/copying-a-file-in-c-with-fwrite
+https://stackoverflow.com/questions/19099663/how-to-correctly-use-fork-exec-wait
+https://www.geeksforgeeks.org/fork-system-call/
 
 
 */
@@ -203,7 +208,7 @@ int main(int argc, char const *argv[])
             char *src_str;
             char *dest_str;
             src_str = strtok(str, " ");
-            dest_str = strtok(NULL, " "); 
+            dest_str = strtok(NULL, " ");
 
             // Variable Definition
             char cTemp;
