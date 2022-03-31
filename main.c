@@ -174,10 +174,10 @@ int main(int argc, char const *argv[])
             memcpy(str, str + 7, MAX_LIMIT - 7);
             char *word;
             char *src_str;
-            src_str = strtok(str, " ");
+            //src_str = strtok(str, " ");
             printf("%s", src_str);
             int res;
-            res = unlink(src_str);
+            res = unlink(str);
             if (res != 0){
                 printf("problem delete\n");
             }
@@ -190,7 +190,7 @@ int main(int argc, char const *argv[])
             char *src_str;
             char *dest_str;
             src_str = strtok(str, " ");
-            dest_str = strtok(NULL, str); // dont know why it doesnt take the second word
+            dest_str = strtok(NULL, " "); // dont know why it doesnt take the second word
 
             // Variable Definition
             char cTemp;
