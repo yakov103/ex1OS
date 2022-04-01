@@ -43,10 +43,8 @@ https://man7.org/linux/man-pages/man3/closedir.3.html
 void dir(char str[MAX_LIMIT]);
 void echo(char *str);
 void cd(char *str);
-void fork_echo();
 
-// answer on q8  : the calls for these are system calls  .  
-
+// answer to q8 : system () is from the libraty stdlib.h  .
 // https://www.tutorialspoint.com/c_standard_library/c_function_system.htm
 
 int main(int argc, char const *argv[])
@@ -78,7 +76,7 @@ int main(int argc, char const *argv[])
             // str[1] = 'c';
             // str[2] = 'h';
             // str[3] = 'o';
-            // system(str);
+            //system(str);
             // fork wait and execv ***************
             // memcpy(str, str + 5, MAX_LIMIT - 4);
             // pid_t pid = fork();
