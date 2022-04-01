@@ -45,6 +45,8 @@ void echo(char *str);
 void cd(char *str);
 void fork_echo();
 
+// answer on q8  : the calls for these are system calls  .  
+
 // https://www.tutorialspoint.com/c_standard_library/c_function_system.htm
 
 int main(int argc, char const *argv[])
@@ -196,7 +198,7 @@ int main(int argc, char const *argv[])
             fclose(fpTargetFile);
             // here the implemntat
         }
-        // we are using implmentation of fopes which is belong to stdio.h , but if we used open() than this is a systen function . 
+        // we are using implmentation of fopen() which is belong to stdio.h , but if we used open() than this is a systen function . 
     }
 
     printf("\nbye bye \n");
