@@ -32,7 +32,9 @@ https://www.geeksforgeeks.org/udp-server-client-implementation-c/
 https://stackoverflow.com/questions/14150431/copying-a-file-in-c-with-fwrite
 https://stackoverflow.com/questions/19099663/how-to-correctly-use-fork-exec-wait
 https://www.geeksforgeeks.org/fork-system-call/
-
+https://man7.org/linux/man-pages/man3/opendir.3.html
+https://man7.org/linux/man-pages/man3/readdir.3.html
+https://man7.org/linux/man-pages/man3/closedir.3.html
 
 */
 
