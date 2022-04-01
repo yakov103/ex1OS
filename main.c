@@ -144,7 +144,7 @@ int main(int argc, char const *argv[])
         {
             client();
         }
-        else if (strncmp(str, "DELETE", 6) == 0)
+        else if (strncmp(str, "DELETE", 6) == 0) 
         {
             memcpy(str, str + 7, MAX_LIMIT - 7);
             char *src_str;
@@ -162,6 +162,11 @@ int main(int argc, char const *argv[])
                 printf("problem delete\n");
             }
             // remove(src_str);  also not working
+            // 
+            //
+            //The implementation is from the library unistd.h . 
+            //
+            //
         }
         else if (strncmp(str, "COPY", 4) == 0)
         {
@@ -189,7 +194,9 @@ int main(int argc, char const *argv[])
             // Close The Files
             fclose(fpSourceFile);
             fclose(fpTargetFile);
+            // here the implemntat
         }
+        // we are using implmentation of fopes which is belong to stdio.h , but if we used open() than this is a systen function . 
     }
 
     printf("\nbye bye \n");
