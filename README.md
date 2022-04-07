@@ -81,9 +81,10 @@ https://man7.org/linux/man-pages/man3/closedir.3.html
 
 ח. כל פקודה אחת שאתם מקבלים - הריצו אותה בעזרת system (5 נקודות)
 ניתן לראות את פעולת הפקודה רק לפונקציות  DIR ECHO כי system יוצר תהליך חדש שבתוכו הוא משנה את הדברים , למשל chdir לא ניתן לראות את השינוי כי הוא משנה בתהליך הילד ולא באבא
-![image](https://user-images.githubusercontent.com/62290677/162159997-a40a395e-0ce9-412b-a656-26a45f11271b.png)
+![image](https://user-images.githubusercontent.com/62290677/162168802-d751d7f5-b674-4339-84c4-7cc254f94559.png)
 
-![image](https://user-images.githubusercontent.com/62290677/162160054-6a62ddf4-45c0-459a-b919-7684ff3e3db6.png)
+![image](https://user-images.githubusercontent.com/62290677/162168946-f25e2131-d5d3-4228-b47c-706a19892797.png)
+
 
 
 
@@ -95,8 +96,9 @@ https://man7.org/linux/man-pages/man3/closedir.3.html
 
 ט. ממשו את הסעיף הקודם בעזרת fork, exec, wait ללא system. (15 נקודות)
 הכניסו את ההוראות ששיניתם מסעיפים קודמים להערה.
-![image](https://user-images.githubusercontent.com/62290677/162160255-e40f68fc-6aee-48ba-82eb-9e98e6a2163c.png)
-![image](https://user-images.githubusercontent.com/62290677/162160315-4ea536bc-c64c-400f-acd1-553664d5d353.png)
+![image](https://user-images.githubusercontent.com/62290677/162169134-0d90b55b-5e1b-427a-b2d8-63fa205e483a.png)
+![image](https://user-images.githubusercontent.com/62290677/162169258-46e52005-1912-4a35-9691-fae165bf97e4.png)
+
 
 
 
