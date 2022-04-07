@@ -1,5 +1,8 @@
 # #תכנות מערכות הפעלה: מטלה 1
 
+
+ההערות שקופצות בעת קימפול המייק פייל נובעות מהקישור שנעזרנו בקוד של geeksforgeeks של שרת TCP שהמרצה שלח לנו ואמר שמותר להיעזר בזה
+
 קישורי מידע שהשתמשנו בהם
 
 - https://stackoverflow.com/questions/2114377/copying-a-part-of-a-string-substring-in-c
