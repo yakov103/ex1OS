@@ -2,16 +2,16 @@
 
 קישורי מידע שהשתמשנו בהם
 
-https://stackoverflow.com/questions/2114377/copying-a-part-of-a-string-substring-in-c
-https://www.geeksforgeeks.org/tcp-server-client-implementation-in-c/
-https://www.geeksforgeeks.org/udp-server-client-implementation-c/
-https://stackoverflow.com/questions/14150431/copying-a-file-in-c-with-fwrite
-https://stackoverflow.com/questions/19099663/how-to-correctly-use-fork-exec-wait
-https://www.geeksforgeeks.org/fork-system-call/
-https://man7.org/linux/man-pages/man3/opendir.3.html
-https://man7.org/linux/man-pages/man3/readdir.3.html
-https://man7.org/linux/man-pages/man3/closedir.3.html
-https://stackoverflow.com/questions/298510/how-to-get-the-current-directory-in-a-c-program
+- https://stackoverflow.com/questions/2114377/copying-a-part-of-a-string-substring-in-c
+- https://www.geeksforgeeks.org/tcp-server-client-implementation-in-c/
+- https://www.geeksforgeeks.org/udp-server-client-implementation-c/
+- https://stackoverflow.com/questions/14150431/copying-a-file-in-c-with-fwrite
+- https://stackoverflow.com/questions/19099663/how-to-correctly-use-fork-exec-wait
+- https://www.geeksforgeeks.org/fork-system-call/
+- https://man7.org/linux/man-pages/man3/opendir.3.html
+- https://man7.org/linux/man-pages/man3/readdir.3.html
+- https://man7.org/linux/man-pages/man3/closedir.3.html
+- https://stackoverflow.com/questions/298510/how-to-get-the-current-directory-in-a-c-program
 
 
 איך להריץ
@@ -63,16 +63,19 @@ TCP PORT
 
 קראו את דפי הman של הפקודות האלה. - (15 נקודות)
 
-https://man7.org/linux/man-pages/man3/opendir.3.html
-https://man7.org/linux/man-pages/man3/readdir.3.html
-https://man7.org/linux/man-pages/man3/closedir.3.html
+- https://man7.org/linux/man-pages/man3/opendir.3.html
+- https://man7.org/linux/man-pages/man3/readdir.3.html
+- https://man7.org/linux/man-pages/man3/closedir.3.html
 
 ז. אם קיבלתם פקודה  CD - תצטרכו לשנות ספריה למחיצה שמגיעה כפרמטר אחרי CD (5 נקודות)
 לצורך זה תצטרכו לקרוא לchdir. האם chdir היא פונקצית ספריה או קריאת מערכת? כתבו את התשובה בהערות (תעוד) 
 תשובה:
+```
 // chdir function is declared
 // inside this header
 #include<unistd.h> 
+
+```
 זה פונקציה שנמצאת בתוך ספרייה אבל מכיוון שהיא משנה דברים במערכת כלומר משנה אז אפשר להגיד שהיא גם פונקציה מערכת
 
 ![image](https://user-images.githubusercontent.com/62290677/162154280-fb92404e-c931-4ee2-9312-e356f399396d.png)
@@ -90,7 +93,9 @@ https://man7.org/linux/man-pages/man3/closedir.3.html
 
 האם system היא פונקצית ספריה או קריאת מערכת? כיתבו את התשובה בהערות
 תשובה:
+```
    #include <stdlib.h>
+```
    זה פונקציה שנמצאת בתוך ספרייה אבל מכיוון שהיא משנה דברים במערכת כלומר משנה אז אפשר להגיד שהיא גם פונקציה מערכת
    
 
@@ -100,10 +105,6 @@ https://man7.org/linux/man-pages/man3/closedir.3.html
 ![image](https://user-images.githubusercontent.com/62290677/162169258-46e52005-1912-4a35-9691-fae165bf97e4.png)
 
 
-
-
-
-
 י. אם מתקבלת הוראה COPY SRC DST - העתיקו את הקובץ המופיע בsource ל DST
 בצעו זאת בעזרת fopen, fread, fwrite. (10 נקודות)
 ![image](https://user-images.githubusercontent.com/62290677/162161662-83f9ce46-7bc9-4c01-8b9c-c9ed99b5f121.png)
@@ -111,7 +112,10 @@ https://man7.org/linux/man-pages/man3/closedir.3.html
 
 האם המימוש שלכם משתמש בקריאות מערכת או בפונקציית ספריה? כתבו את התשובות בהערה.
 תשובה:
+```
    #include <stdio.h>
+```
+
    זה פונקציות שנמצאות בתוך ספרייה אבל מכיוון שהיא משנה דברים במערכת כלומר משנה אז אפשר להגיד שהיא גם פונקציה מערכת
 
 י.א. אם מתקבלת הוראה DELETE FILENAME - מחקו את הקובץ המתקבל כFILENAME. עשו זאת בעזרת הוראת unlink.
@@ -120,7 +124,10 @@ https://man7.org/linux/man-pages/man3/closedir.3.html
 
 האם המימוש שלכם משתמש בקריאות מערכת או בפונקצית ספריה? כתבו את התשובה בהערה (5 נקודות)
 תשובה:
-#include<unistd.h>     זה פונקציה שנמצאת בתוך ספרייה אבל מכיוון שהיא משנה דברים במערכת כלומר משנה אז אפשר להגיד שהיא גם פונקציה מערכת
+```
+#include<unistd.h>    
+```
+זה פונקציה שנמצאת בתוך ספרייה אבל מכיוון שהיא משנה דברים במערכת כלומר משנה אז אפשר להגיד שהיא גם פונקציה מערכת
 
 
 
