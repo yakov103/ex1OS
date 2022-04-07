@@ -77,6 +77,7 @@ int main(int argc, char const *argv[])
             // str[2] = 'h';
             // str[3] = 'o';
             //system(str);
+            // is a function that comes from a library #include<stdio.h> but it changes things in the system , uses kernal so it is a system fucntion 
             // fork wait and execv ***************
             // memcpy(str, str + 5, MAX_LIMIT - 4);
             // pid_t pid = fork();
@@ -99,6 +100,7 @@ int main(int argc, char const *argv[])
             //     char *args[] = {bin_path, str};
             //     execv(bin_path, args);
             // }
+            
         }
         else if (strncmp(str, "DIR", 3) == 0)
         {
@@ -109,6 +111,7 @@ int main(int argc, char const *argv[])
             // str[1] = 'i';
             // str[2] = 'r';
             // system(str);
+            // is a function that comes from a library #include<stdio.h> but it changes things in the system , uses kernal so it is a system fucntion 
             // fork wait and execv ***************
             // pid_t pid = fork();
             // if (pid == -1)
@@ -139,6 +142,7 @@ int main(int argc, char const *argv[])
             // not working because it run the function on the child process
             // fork wait and execv *********************
             // not working because it run the function on the child process
+            // CD is a function that comes from a library #include<unistd.h> but it changes things in the system , uses kernal so it is a system fucntion 
         }
         else if (strncmp(str, "TCP PORT", 8) == 0)
         {
@@ -161,7 +165,7 @@ int main(int argc, char const *argv[])
             {
                 printf("problem delete\n");
             }
-            // remove(src_str);  also not working
+             // is a function that comes from a library #include<stdio.h> but it changes things in the system , uses kernal so it is a system fucntion
             // 
             //
             //The implementation is from the library unistd.h . 
@@ -193,7 +197,7 @@ int main(int argc, char const *argv[])
             // Close The Files
             fclose(fpSourceFile);
             fclose(fpTargetFile);
-            // here the implemntat
+             // is a function that comes from a library #include<stdio.h> but it changes things in the system , uses kernal so it is a system fucntion
         }
         // we are using implmentation of fopen() which is belong to stdio.h , but if we used open() than this is a systen function . 
     }
