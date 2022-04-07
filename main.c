@@ -171,7 +171,6 @@ int main(int argc, char const *argv[])
         else if (strncmp(str, "COPY", 4) == 0)
         {
             memcpy(str, str + 5, MAX_LIMIT - 5);
-            char *word;
             char *src_str;
             char *dest_str;
             src_str = strtok(str, " ");
