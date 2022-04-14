@@ -17,7 +17,7 @@
 - https://stackoverflow.com/questions/298510/how-to-get-the-current-directory-in-a-c-program
 
 
-[![IMAGE ALT TEXT HERE](https://user-images.githubusercontent.com/62290677/162177931-2e1135f8-460e-4a9b-8777-b0411263743d.png)](https://www.youtube.com/watch?v=VQmZOC7CB5E)
+[![IMAGE ALT TEXT HERE](https://user-images.githubusercontent.com/62290677/162177931-2e1135f8-460e-4a9b-8777-b0411263743d.png)](https://www.youtube.com/watch?v=-cpezYDlINI)
 
 איך להריץ
 
